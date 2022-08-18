@@ -10,6 +10,7 @@
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 ul,
@@ -60,4 +61,142 @@ body {
 body{
     font-family: 'Poppins', serif;
     font-weight: 500;
+}
+
+:root{
+    --primary-color: #ACF2D1;
+    --secondary-color: #F1FFF8;
+    --main-text-color: #222;
+    --secondary-text-color: #272142;
+    --white-color: #fff;
+}
+
+.hero{
+    background-color: var(--secondary-color);
+    text-align: center;
+    position: relative;
+    padding-top: 3rem;
+}
+
+.hero-nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.hero-logo{
+    font-size: 1rem;
+    color: var(--secondary-text-color);
+}
+
+.hero-list{
+    font-size: 1rem;
+    display: flex;
+    color: var(--secondary-text-color);
+}
+
+.list-item{
+    color: var(--secondary-text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.hero-list .list-item:not(:last-child){
+    margin-right: 2rem;
+}
+
+.item-link:hover{
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+.active{
+    color: var(--primary-color);
+}
+
+.hero-content{
+    margin: 6rem 0;
+}
+
+.hero-greeting{
+    font-size: 2rem;
+    font-weight: 600;
+    color:var(--secondary-text-color);
+}
+
+.hero-name{
+    margin-top: 0.5rem;
+    font-size: 5rem;
+    color: var(--secondary-text-color);
+}
+
+.hero-position{
+    margin-top: 0.5rem;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--secondary-text-color);
+    opacity: 0.7;
+}
+
+.main-button{
+    margin-top: 4rem;
+    font-size: 1.25rem;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    padding: 18px 40px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.main-button:hover{
+    color: var(--primary-color);
+    background-color: var(--white-color);
+    border: 1px solid var(--primary-color);
+}
+
+.waves {
+    position:relative;
+    bottom: 0;
+    width: 100%;
+    height:25vh;
+    margin-bottom:-7px; /*Fix for safari gap*/
+    min-height:100px;
+    max-height:200px;
+  }
+
+  /* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height:70px;
+    min-height:40px;
+  }
 }
